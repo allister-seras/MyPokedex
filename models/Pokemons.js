@@ -45,9 +45,8 @@ Pokemon.init(
           team: {
               type: DataTypes.INTEGER,
               references: {
-                model: 'teams',
+                model: 'Team',
                 key: "id",
-                unique: "false"
               }
           }
     },
@@ -56,6 +55,8 @@ Pokemon.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'location'
+        modelName: 'Pokemon'
     }
 )
+
+module.exports = Pokemon;
