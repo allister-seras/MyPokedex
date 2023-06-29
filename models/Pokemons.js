@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //create pokemon model
-class Pokemon extends Model {}
+class Pokemons extends Model {}
 
 
 //create columns for pokemon model
-Pokemon.init(
+Pokemons.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -47,7 +47,7 @@ Pokemon.init(
               references: {
                 model: 'teams',
                 key: "id",
-                unique: "false"
+                //unique: "false"
               }
           }
     },
@@ -59,3 +59,5 @@ Pokemon.init(
         modelName: 'location'
     }
 )
+
+module.exports = Pokemons;
