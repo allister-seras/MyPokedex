@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
         for (const pokemonId of pokemonIds) {
         const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
         const response = await axios.get(apiUrl);
-        const pokemonData = response.data;
+        pokemonData = response.data;
 
         pokemonData.push(pokemonData);
     }
