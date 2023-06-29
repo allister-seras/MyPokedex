@@ -1,23 +1,34 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Team model
-class Team extends Model {}
+// create our Teams model
+class Teams extends Model {}
 
-Team.init(
-    {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+// create fields/columns for Teams model
+Teams.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-    {
-        sequelize,
-        timestamps: true,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'team'
+    pokemon_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'Pokemons',
+          key: 'id',
+          unique: false
     }
+  },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'teams'
+  }
 );
 
-module.exports = Team;
+module.exports = Teams;
