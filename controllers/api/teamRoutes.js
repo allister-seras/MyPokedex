@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     }
         const team = await Team.create({
         name: name,
-        pokemons: pokemonDataArray
+        pokemons: pokemonData
     });
 
     res.status(201).json({ message: 'Team is successfuly created!', team });
