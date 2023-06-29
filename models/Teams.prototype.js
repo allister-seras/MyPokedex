@@ -16,7 +16,7 @@ Teams.init(
     pokemon2: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pokemons',
+            model: 'pokemon',
             key: 'id',
             unique: false
       }
@@ -24,7 +24,7 @@ Teams.init(
     pokemon3: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pokemons',
+            model: 'pokemon',
             key: 'id',
             unique: false
       }
@@ -33,7 +33,7 @@ Teams.init(
     pokemon4: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pokemons',
+            model: 'pokemon',
             key: 'id',
             unique: false
     }
@@ -41,7 +41,7 @@ Teams.init(
     pokemon5: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pokemons',
+            model: 'pokemon',
             key: 'id',
             unique: false
     }
@@ -49,7 +49,7 @@ Teams.init(
     pokemon6: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'pokemons',
+            model: 'pokemon',
             key: 'id',
             unique: false
     }
