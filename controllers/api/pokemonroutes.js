@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
             name: response.data.forms[0].name,
             height: response.data.height,
             weight: response.data.weight,
-            //image: response.data.sprites.front_default,
+            image: response.data.sprites.front_default,
             typeOne: response.data.types[0].type.name,
         }
 
