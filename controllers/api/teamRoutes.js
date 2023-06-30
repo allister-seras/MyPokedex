@@ -29,14 +29,12 @@ router.post('/', async (req, res) => {
     });
 
 // adds pokemon to team
+// TODO Make dynamic
 router.put("/:pokemonNum", (req,res) => {
   try {
-    const teamSlot = (() => {
-      return req.params.pokemonNum; 
-    })
     Team.update(
       {
-        teamSlot: req.body.pokemonId
+        //:req.body.pokemonId
       },
       {
         where: {id: req.body.teamNum }
