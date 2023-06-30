@@ -47,7 +47,6 @@ Pokemons.init(
               references: {
                 model: 'Teams',
                 key: "id",
-                //unique: "false"
               }
           }
     },
@@ -56,7 +55,7 @@ Pokemons.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'location'
+        modelName: 'Pokemon'
     }
 )
 
