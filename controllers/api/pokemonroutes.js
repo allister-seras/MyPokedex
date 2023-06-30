@@ -5,22 +5,10 @@ const axios = require('axios');
 
 router.get("/", async (req, res) => {
     try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.pokemon}`);
-    
-        const pokemonData = {
-            name: response.data.forms[0].name,
-            height: response.data.height,
-            weight: response.data.weight,
-            //image: response.data.sprites.front_default,
-            typeOne: response.data.types[0].type.name,
-        }
+        Pokemon.findAll().then( (allPokemon) => {
+            return res.status(200).json(allPokemon);
+        });
 
-        const secondType = response.data.types[1];
-        if (secondType) {
-          pokemonData.typeTwo = secondType.type.name;
-        }
-
-        return res.status(200).json(pokemonData);
     } catch (err) {
         return res.status(500).json(err);
     }
@@ -31,7 +19,6 @@ router.post("/", async (req, res) => {
     try {
         // {
         //  "pokemon": "ditto"
-        //  "team": "round guys"
         // }
 
         // grabs pokemon data 
@@ -40,23 +27,48 @@ router.post("/", async (req, res) => {
         // formats data
         const pokemonData = {
             name: response.data.forms[0].name,
-            height: response.data.height,
-            weight: response.data.weight,
-            //image: response.data.sprites.front_default,
-            typeOne: response.data.types[0].type.name,
+            type: response.data.types[0].type.name,
         }
 
         const secondType = response.data.types[1];
             if (secondType) {
-            pokemonData.typeTwo = secondType.type.name;
+            pokemonData.type2 = secondType.type.name;
             }
+
+        pokemonData.weight = response.data.weight;
+        pokemonData.height = response.data.height;
+        pokemonData.image = response.data.sprites.front_default;
         
-        pokemonData.team = req.body.team;
-
+        //return res.status(200).json(pokemonData);
         // adds data 
-        Pokemon.create(pokemonData);
+        Pokemon.create(pokemonData)
+        .then((object) => {
+            // returns pokemon data
+            return res.status(200).json(object);
+        });
 
-        // returns pokemon data
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+});
+
+router.get("/find", async (req, res) => {
+    try {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.pokemon}`);
+    
+        const pokemonData = {
+            name: response.data.forms[0].name,
+            height: response.data.height,
+            weight: response.data.weight,
+            image: response.data.sprites.front_default,
+            typeOne: response.data.types[0].type.name,
+        }
+
+        const secondType = response.data.types[1];
+        if (secondType) {
+          pokemonData.typeTwo = secondType.type.name;
+        }
+
         return res.status(200).json(pokemonData);
 
     } catch (err) {

@@ -23,7 +23,20 @@ const seedDatabase = async () => {
 }
 
 
-  const pokemons = await Pokemons.bulkCreate(pokemonSeedData);
+
+Teams.update(
+  {
+    pokemon1: 1,
+    pokemon2: 2,
+    pokemon3: 3,
+    pokemon4: 4,
+    pokemon5: 5,
+    pokemon6: 6, 
+  },
+  {
+    where: { id: 1 },
+  }
+);
   
 //create Teams at random
 for (let i = 0; i < 10; i++) {
