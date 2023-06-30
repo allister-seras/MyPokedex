@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
         Pokemon.findAll().then( (allPokemon) => {
             return res.status(200).json(allPokemon);
         });
-
+      
     } catch (err) {
         return res.status(500).json(err);
     }

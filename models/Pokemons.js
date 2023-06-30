@@ -54,7 +54,7 @@ Pokemons.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Pokemon'
+        modelName: 'Pokemons'
     }
 )
 
