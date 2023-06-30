@@ -7,42 +7,47 @@ const pokemonData = require('./pokemonData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  const pokemons = await Pokemons.bulkCreate(pokemonSeedData);
+
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
-  const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/ditto`);
+//get pokemon info
   
-  const pokemonData = {
+/*const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.pokemon}`);
+    
+const pokemonData = {
     name: response.data.forms[0].name,
     height: response.data.height,
     weight: response.data.weight,
-    //image: response.data.sprites.front_default,
-    type: response.data.types[0].type.name,
-}
+    image: response.data.sprites.front_default,
+    typeOne: response.data.types[0].type.name,
+},*/
 
-
-  const pokemons = await Pokemons.bulkCreate(pokemonSeedData);
-  
-//create Teams at random
 for (let i = 0; i < 10; i++) {
-  //user select pokemon ids to be added to teams model??
-//const { id: selectedPokemonId } = pokemons [
+    // Get a random pokemon's `id`
+    const { id: randomPokemonId } = pokemons[
+      Math.floor(Math.random() * pokemons.length)
+    ];
 
-//not sure what to put in here
-
-///];
-  //create new Team with select pokemon ids.
-  await Teams.create({
-    pokemon_id: pokemons,
+    await Teams.create({
+        user_id: users[Math.floor(Math.random() * users.length)].id,
+        pokemon1: randomPokemonId,
+        pokemon2: randomPokemonId,
+        pokemon3: randomPokemonId,
+        pokemon4: randomPokemonId,
+        pokemon5: randomPokemonId,
+        pokemon6: randomPokemonId,
+    }).catch((err) => {
+       
+        console.log(err);
+      });
+    }
   
-  }).catch((err) =>{
-    console.log(err);
-  });
-}
-
-  process.exit(0);
-};
-
-seedDatabase();
+    process.exit(0);
+  };
+  
+  seedDatabase();
+  

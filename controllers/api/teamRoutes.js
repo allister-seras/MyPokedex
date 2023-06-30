@@ -1,32 +1,48 @@
 const express = require('express');
 const axios = require('axios');
-const Team = require('../../models/Teams');
+const  { User, Pokemon, Team } = require('../../models/index');
 const router = express.Router();
 
+// gets all teams from user
+// TODO come back and set this up to findByPk with users
+router.get("/", async (req,res) => {
+  try {
+    Team.findAll().then((data) => {
+      res.status(200).json(data);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// adds new Team
+// TODO come back to make this connect to the user's profile
 router.post('/', async (req, res) => {
     try {
-        const { name, pokemonIds} = req.body;
-        const pokemonData = [];
-
-        //using Axios to fetch pokemon data
-        for (const pokemonId of pokemonIds) {
-        const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
-        const response = await axios.get(apiUrl);
-        pokemonData = response.data;
-
-        pokemonData.push(pokemonData);
-    }
-        const team = await Team.create({
-        name: name,
-        pokemons: pokemonData
-    });
-
-    res.status(201).json({ message: 'Team is successfuly created!', team });
-  } 
-    catch (err) {
+        Team.create().then(() => {
+          res.status(200).json("New team created");
+        })
+  } catch (err) {
     console.error('Error creating team:', err);
     res.status(500).json({ message: 'Please input a valid pokemon to create your team.'});
   }
     });
+
+// adds pokemon to team
+// TODO Make dynamic
+router.put("/:pokemonNum", (req,res) => {
+  try {
+    Team.update(
+      {
+        //:req.body.pokemonId
+      },
+      {
+        where: {id: req.body.teamNum }
+      }
+    )
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
