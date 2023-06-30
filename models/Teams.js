@@ -13,15 +13,65 @@ Teams.init(
       primaryKey: true,
       autoIncrement: true
     },
-    pokemon_id: {
+    pokemon1: {
       type: DataTypes.INTEGER,
       references: {
           model: 'Pokemons',
           key: 'id',
           unique: false
+    },
+  },
+    pokemon2: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'pokemon',
+          key: 'id',
+          unique: false
     }
   },
+  pokemon3: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'pokemon',
+          key: 'id',
+          unique: false
+    }
+  }
+  ,
+  pokemon4: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'pokemon',
+          key: 'id',
+          unique: false
+  }
   },
+  pokemon5: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'pokemon',
+          key: 'id',
+          unique: false
+  }
+  },
+  pokemon6: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'pokemon',
+          key: 'id',
+          unique: false
+  }
+  },
+  
+  user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'User',
+      key: 'id',
+    },
+
+  },
+},
   {
     sequelize,
     timestamps: false,
