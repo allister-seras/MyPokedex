@@ -1,34 +1,68 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Teams model
-class Teams extends Model {}
+// create our Team model
+class Team extends Model {}
 
-// create fields/columns for Teams model
-Teams.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    pokemon_id: {
-      type: DataTypes.INTEGER,
-      references: {
-          model: 'Pokemons',
-          key: 'id',
-          unique: false
-    }
-  },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'teams'
-  }
+Team.init(
+    {
+        id: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          primaryKey: true,
+          autoIncrement: true
+        },
+        pokemon1: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+          }
+        }, 
+        pokemon2: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+          }
+        },
+        pokemon3: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+          }
+        }
+        ,
+        pokemon4: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+        }
+        },
+        pokemon5: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+        }
+        },
+        pokemon6: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'pokemon',
+                key: 'id',
+        }
+        },
+        },
+      {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'teams'
+      }
 );
 
-module.exports = Teams;
+module.exports = Team;
