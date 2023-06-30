@@ -42,10 +42,10 @@ Pokemons.init(
             type: DataTypes.STRING,
             allowNull: true
           },
-          team: {
+          team_id: {
               type: DataTypes.INTEGER,
               references: {
-                model: 'Team',
+                model: 'Teams',
                 key: "id",
               }
           }
