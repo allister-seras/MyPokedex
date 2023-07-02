@@ -1,0 +1,69 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home-desktop-default {
+    width: 100%;
+    height: 1032px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-shrink: 0;
+    background-size: cover;
+    justify-content: flex-start;
+    background-image: url('	https://www.spriters-resource.com/resources/sheets/8/8291.png?updated=1548811284');
+  }
+  .home-realpokedex1 {
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    width: 721px;
+    height: 221px;
+    margin: auto;
+    position: absolute;
+    align-self: flex-start;
+    }
+  @media(max-width: 1200px) {
+    .home-signup-bttn {
+      top: 427px;
+      right: 93px;
+    }
+    .home-login-bttn {
+      top: 427px;
+      right: 93px;
+    }
+  }
+  .home-signup-bttn {
+    top: -136px;
+    position: relative;
+    height: 97px;
+    left: 982px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #524FE2;
+    width: 313px;
+    color: transparent;
+    border-style: hidden;
+    background-size: cover;
+    background-image: url(../../assets/sign\ up.png);
+  }
+  .home-login-bttn {
+    position: relative;
+    top: -136px;
+    left: 288px;
+    height: 97px;
+    display: block;
+    cursor: pointer;
+    background-color: #524FE2;
+    width: 313px;
+    border-radius: 15px;
+    color: transparent;
+    border-style: hidden;
+    background-size: cover;
+    background-image: url(../../assets/login.png);
+}
