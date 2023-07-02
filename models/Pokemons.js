@@ -44,7 +44,7 @@ Pokemons.init(
           team_id: {
               type: DataTypes.INTEGER,
               references: {
-                model: 'Teams',
+                model: 'teams',
                 key: "id",
               }
           }
@@ -54,7 +54,7 @@ Pokemons.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Pokemons'
+        modelName: 'pokemon'
     }
 )
 
