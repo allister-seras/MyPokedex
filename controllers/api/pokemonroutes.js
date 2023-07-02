@@ -3,12 +3,13 @@ const { User, Pokemon, Team } = require('../../models/index');
 const withAuth = require('../../utils/auth');
 const axios = require('axios');
 
+// returns all saved pokemon
 router.get("/", async (req, res) => {
     try {
         Pokemon.findAll().then( (allPokemon) => {
             return res.status(200).json(allPokemon);
         });
-      
+
     } catch (err) {
         return res.status(500).json(err);
     }
@@ -52,8 +53,12 @@ router.post("/", async (req, res) => {
     }
 });
 
+// searches any new pokemon
 router.get("/find", async (req, res) => {
     try {
+        // {
+        //  "pokemon": "ditto"
+        // }
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${req.body.pokemon}`);
     
         const pokemonData = {
@@ -73,6 +78,21 @@ router.get("/find", async (req, res) => {
 
     } catch (err) {
         return res.status(500).json(err);
+    }
+});
+
+// removes pokemon based off id
+router.delete("/remove/:id", async (req, res) => {
+    try {
+        Pokemon.destroy(
+            {
+                where: { id: req.params.id}
+            }
+        ).then((removed) => {
+            res.status(200).json(removed);
+        });
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 
