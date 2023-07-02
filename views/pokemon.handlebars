@@ -1,0 +1,18 @@
+<section class="pokemon">
+    <h2 class="pokemon-name">{{pokemon.name}}</h2>
+    <section class="flex-row justify center">
+        {{#each pokemon as | pokemon |}}
+        <section class="card">
+            <header>{{image}}</header>
+            <div class="card-body">
+                <p>{{type}}</p> 
+                {{#if type2}}
+                <p>{{type2}}</p>
+                {{/if}}
+                <p>{{height}} {{weight}}</p>
+                <!-- <p>{{description}}</p> -->
+            </div>
+        </section>
+        {{/each}}
+    </section>
+</section>
