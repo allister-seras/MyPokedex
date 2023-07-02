@@ -5,10 +5,14 @@
         <section class="card">
             <header>{{image}}</header>
             <div class="card-body">
-                <p>{{type}} {{type2}}</p>
+                <p>{{type}}</p> 
+                {{#if type2}}
+                <p>{{type2}}</p>
+                {{/if}}
                 <p>{{height}} {{weight}}</p>
                 <!-- <p>{{description}}</p> -->
             </div>
         </section>
+        {{/each}}
     </section>
 </section>
