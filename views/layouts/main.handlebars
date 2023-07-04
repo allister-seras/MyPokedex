@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>My Pokédex</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,16 +13,16 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        <a href="https://emoji.gg/emoji/pokeball"> 
+          <img src="https://cdn3.emoji.gg/emojis/pokeball.png" width="64px" height="64px" alt="pokeball">
+        </a> 
+        <a href="/">My Pokédex</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
@@ -31,7 +31,8 @@
       {{{ body }}}
     </main>
     <footer>
-      
+        <h3>Brought To You By Team Rocket 5</h3>
+        <p>Allister Kalag, Leonela Ludena, Amanda Monroy, Raymond Nguyen, Nathan Sabin</p>
     </footer>
   </div>
 
