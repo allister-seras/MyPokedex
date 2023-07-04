@@ -1,0 +1,119 @@
+.signup-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .signup-signup {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 999px;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  .signup-firstname {
+    top: 185px;
+    left: 0px;
+    right: 0px;
+    width: 324px;
+    height: 76px;
+    margin: auto;
+    position: absolute;
+    align-self: center;
+  }
+  .signup-lastname {
+    top: 277px;
+    left: 0px;
+    right: 0px;
+    width: 326px;
+    height: 67px;
+    margin: auto;
+    position: absolute;
+    align-self: flex-start;
+  }
+  .signup-email {
+    top: 359px;
+    left: 0px;
+    right: 0px;
+    width: 326px;
+    height: 67px;
+    margin: auto;
+    position: absolute;
+    align-self: flex-start;
+  }
+  .signup-username {
+    top: 441px;
+    left: 0px;
+    right: 0px;
+    width: 326px;
+    height: 67px;
+    margin: auto;
+    position: absolute;
+    align-self: flex-start;
+  }
+  .signup-password {
+    top: 522px;
+    left: 0px;
+    right: 0px;
+    width: 326px;
+    height: 67px;
+    margin: auto;
+    position: absolute;
+    align-self: flex-start;
+  }
+  .signup-signup1 {
+    top: 637px;
+    color: transparent;
+    right: 0px;
+    justify-content: center;
+    width: 327px;
+    height: 103px;
+    display: flex;
+    position: relative;
+    margin: auto;
+    background-color: #524FE2;
+    border-radius: 15px;
+    padding: 0px;
+    padding-bottom: 1px;
+    background-size: cover;
+    background-image: url(../../assets/sign\ up.png);
+}
+  .signup-backbtn {
+    left: 7px;
+    color: transparent;
+    width: 209px;
+    top: 783px;
+    height: 107px;
+    position: relative;
+    margin-top: auto;
+    margin-left: auto;
+    border-style: hidden;
+    margin-right: auto;
+    margin-bottom: 0px;
+    padding-right: 54px;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url(../../assets/back_btn.png);
+}
+  .signup-image {
+    top: 57px;
+    left: 0px;
+    right: 0px;
+    width: 110px;
+    height: 106px;
+    margin: auto;
+    position: absolute;
+    object-fit: cover;
+  }
+  @media(max-width: 1200px) {
+    .signup-signup1 {
+      top: 427px;
+      right: 93px;
+    }
+  }
