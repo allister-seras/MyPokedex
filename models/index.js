@@ -2,12 +2,16 @@ const User = require('./User');
 const Pokemon = require('./Pokemons');
 const Team = require('./Teams');
 
-Team.hasMany(Pokemon, {
-    foreignKey: "team_id"
+User.hasMany(Team, {
+    foreignKey: "user_id"
 });
 
-Pokemon.hasMany(Team, {
-    foreignKey: "id"
+Team.belongsTo(Pokemon, {
+    foreignKey: "pokemon_id"
+});
+
+Pokemon.hasOne(Team, {
+    foreignKey: "pokemon_id"
 });
 
 module.exports = { User, Pokemon, Team };

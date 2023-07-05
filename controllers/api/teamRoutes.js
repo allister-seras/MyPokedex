@@ -49,29 +49,71 @@ router.put("/:teamNum", async (req,res) => {
     const teamData = await Team.findByPk(team);
   
     if (teamData.pokemon1 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon1: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else if (teamData.pokemon2 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon2: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else if (teamData.pokemon3 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon3: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else if (teamData.pokemon4 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon4: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else if (teamData.pokemon5 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon5: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else if (teamData.pokemon6 == null) {
+      Pokemon.update({
+        team_id: team
+      }, 
+      {
+        where: {id: req.body.pokemonNum}
+      });
       Team.update({
         pokemon6: req.body.pokemonNum},{where: {id: team}})
         .then((result) => res.status(200).json(result));
+
     } else {
       throw new Error("error full");
     }
@@ -83,52 +125,121 @@ router.put("/:teamNum", async (req,res) => {
 
 // removes pokemon from a team based of id
 router.delete("/remove/:teamNum", async (req, res) => {
+  // {
+  //  "pokemonMember": 1,
+  //  }
   try {
-    const pokemonNum = req.body.pokemonNum;
+    const pokemonMember = req.body.pokemonMember;
 
     const teamNum = req.params.teamNum;
     const teamData = await Team.findByPk(teamNum);
 
-    if (teamData.pokemon1 == null) {
-      Team.removeColumn
-    } else if (teamData.pokemon2 == null) {
+    if (pokemonMember == 1) {
+      const pokemonNum = teamData.pokemon1;
 
-    } else if (teamData.pokemon3 == null) {
+      Team.update({
+        pokemon1: null
+      },
+      {
+        where: {id: teamNum}
+      })
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
 
-    } else if (teamData.pokemon4 == null) {
+    } else if (pokemonMember == 2) {
+      const pokemonNum = teamData.pokemon2;
 
-    } else if (teamData.pokemon5 == null) {
+      Team.update({
+        pokemon2: null
+      },
+      {
+        where: {id: teamNum}
+      })
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
+    } else if (pokemonMember == 3) {
+      const pokemonNum = teamData.pokemon3;
 
-    } else if (teamData.pokemon6 == null) {
+      Team.update({
+        pokemon3: null
+      },
+      {
+        where: {id: teamNum}
+      })
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
+    } else if (pokemonMember == 4) {
+      const pokemonNum = teamData.pokemon4;
 
+      Team.update({
+        pokemon4: null
+      },
+      {
+        where: {id: teamNum}
+      });
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
+
+    } else if (pokemonMember == 5) {
+      const pokemonNum = teamData.pokemon5;
+
+      Team.update({
+        pokemon5: null
+      },
+      {
+        where: {id: teamNum}
+      })
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
+    } else if (pokemonMember == 6) {
+      const pokemonNum = teamData.pokemon6;
+
+      Team.update({
+        pokemon6: null
+      },
+      {
+        where: {id: teamNum}
+      })
+      Pokemon.update({
+        team_id: null
+      },
+      {
+        where: {id: pokemonNum}
+      }).then((result) => {
+        res.status(200).json(result);
+      });
     }
 
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// changes a pokemon based of a team id
-router.put("/update/:teamNum", async (req, res) => {
-  try {
-    const pokemonNum = req.body.pokemonNum;
-
-    const teamNum = req.params.teamNum;
-    const teamData = await Team.findByPk(teamNum);
-
-    if (teamData.pokemon1 == null) {
-
-    } else if (teamData.pokemon2 == null) {
-
-    } else if (teamData.pokemon3 == null) {
-
-    } else if (teamData.pokemon4 == null) {
-
-    } else if (teamData.pokemon5 == null) {
-
-    } else if (teamData.pokemon6 == null) {
-
-    }
   } catch (err) {
     res.status(500).json(err);
   }
