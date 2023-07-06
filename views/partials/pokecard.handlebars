@@ -1,0 +1,14 @@
+<div class="card">
+  <a href="/pokemon/{{id}}">
+    <div class="card-section">
+      <img {{pokemon.image}}>
+    </div>
+    <div class="card-section">
+      <p>{{pokemon.name}}</p>
+      <p>{{pokemon.type}}</p> 
+      {{#if pokemon.type2}}
+      <p>{{pokemon.type2}}</p>
+      {{/if}}
+    </div>
+  </a>
+</div>

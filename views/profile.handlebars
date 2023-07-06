@@ -1,25 +1,25 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Team!:</h3>
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="project-name">Team name:</label>
+        <input class="form-input" type="text" id="team-name" name="team-name" />
       </div>
       <div class="form-group">
         <label for="project-funding">needed funding ($):</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="project-desc">Description:</label>
+        <textarea class="form-input" id="team-desc" name="team-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +27,20 @@
     </form>
   </div>
 
-  {{#if projects.length}}
+  {{#if team.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>Current Teams:</h3>
 
-    {{#each projects as |project|}}
+    {{#each teams as |team|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/project/{{team.id}}">{{team.name}}</a></h4>
+      </div>
+      <div>
+        {{> team}}
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{team.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

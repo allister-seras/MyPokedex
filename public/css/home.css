@@ -50,7 +50,7 @@
     color: transparent;
     border-style: hidden;
     background-size: cover;
-    background-image: url(../../assets/sign\ up.png);
+    background-image: url(../assets/signUp.png);
   }
   .home-login-bttn {
     position: relative;
@@ -65,5 +65,5 @@
     color: transparent;
     border-style: hidden;
     background-size: cover;
-    background-image: url(../../assets/login.png);
+    background-image: url(../assets/login.png);
 }
