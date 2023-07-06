@@ -4,10 +4,13 @@ const  { User, Pokemon, Team } = require('../../models/index');
 const router = express.Router();
 
 // gets all teams from user
-// TODO come back and set this up to findByPk with users
+// TODO check if session.user_id works 
 router.get("/", async (req,res) => {
   try {
-    Team.findAll().then((data) => {
+    Team.findAll(
+      // add this line when deployed
+      //{where: {user_id: req.session.user_id}}
+      ).then((data) => {
       res.status(200).json(data);
     });
   } catch (err) {
@@ -26,11 +29,26 @@ router.get("/:team", async (req, res) => {
   }
 });
 
+
+router.post("/user", async (req,res) => {
+  User.create(
+    {
+      name: "test",
+      email: "email@test.com",
+      password: "password"
+  }
+  );
+  res.status(200).json("worked")
+});
+
 // adds new Team
 // TODO come back to make this connect to the user's profile
 router.post('/', async (req, res) => {
     try {
-        Team.create().then(() => {
+        Team.create(
+          // add this line when deployed
+          // {user_id: req.session.user_id}
+          ).then(() => {
           res.status(200).json("New team created");
         })
   } catch (err) {

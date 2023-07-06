@@ -40,7 +40,6 @@ router.post("/", async (req, res) => {
         pokemonData.height = response.data.height;
         pokemonData.image = response.data.sprites.front_default;
         
-        //return res.status(200).json(pokemonData);
         // adds data 
         Pokemon.create(pokemonData)
         .then((object) => {
