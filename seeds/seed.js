@@ -7,6 +7,7 @@ const pokemonSeedData = require('./pokemonData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+  // creates pokemon
   const pokemons = await Pokemon.bulkCreate(pokemonSeedData);
 
   const users = await User.bulkCreate(userData, {
@@ -32,6 +33,7 @@ for (let i = 0; i < 10; i++) {
       Math.floor(Math.random() * pokemons.length)
     ];
 
+    // creates team and adds all pokemon 
     await Team.create({
         user_id: users[Math.floor(Math.random() * users.length)].id,
         pokemon1: randomPokemonId,
