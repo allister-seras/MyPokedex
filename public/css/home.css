@@ -28,16 +28,7 @@
     position: absolute;
     align-self: flex-start;
     }
-  @media(max-width: 1200px) {
-    .home-signup-bttn {
-      top: 427px;
-      right: 93px;
-    }
-    .home-login-bttn {
-      top: 427px;
-      right: 93px;
-    }
-  }
+  
   .home-signup-bttn {
     top: -136px;
     position: relative;
@@ -66,4 +57,22 @@
     border-style: hidden;
     background-size: cover;
     background-image: url(../assets/login.png);
+}
+@media(max-width: 1200px) {
+  .home-signup-bttn {
+    left: 620px;
+  }
+  .home-login-bttn {
+    left: -25px;
+    width: 231px;
+  }
+}
+@media(max-width: 1400px) {
+  .home-signup-bttn {
+    left: 730px;
+  }
+  .home-login-bttn {
+    left: 60px;
+    width: 231px;
+  }
 }
