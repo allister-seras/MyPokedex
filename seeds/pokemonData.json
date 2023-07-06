@@ -3,7 +3,7 @@
         "name": "Dragapault",
         "type": "Dragon",
         "type2": "Ghost",
-        "weight": "110.2 lbs",
+        "weight": 110.2,
         "height": "9'10",
         "image": "????"
        

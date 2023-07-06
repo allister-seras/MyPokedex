@@ -14,4 +14,8 @@ Pokemon.hasOne(Team, {
     foreignKey: "pokemon_id"
 });
 
+
+
+
+
 module.exports = { User, Pokemon, Team };
