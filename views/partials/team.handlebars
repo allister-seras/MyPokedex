@@ -1,8 +1,8 @@
 <section class="container">
   <h3 class="team">{{team.name}}</h3>
   <section class="flex-row justify-center">
-    <!-- For each pokemon that belongs to this team, the painting-details partial is used to render each painting's data -->
-    {{#each team.pokemon as |pokecard|}}
+    <!-- For each pokemon that belongs to this team, the pokecard partial is used to render each pokemon's data -->
+    {{#each team.pokemon as |pokemon|}}
     {{> pokecard}}
     {{/each}}
   </section>

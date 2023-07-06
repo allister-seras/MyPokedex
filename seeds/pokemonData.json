@@ -1,12 +1,60 @@
 [
+	{
+		"id": 1,
+		"name": "ditto",
+		"type": "normal",
+		"type2": null,
+		"weight": 40,
+		"height": 3,
+		"image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+		"team_id": null
+	},
+	{
+		"id": 2,
+		"name": "jigglypuff",
+		"type": "normal",
+		"type2": "fairy",
+		"weight": 55,
+		"height": 5,
+		"image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+		"team_id": null
+	},
     {
-        "name": "Dragapault",
-        "type": "Dragon",
-        "type2": "Ghost",
-        "weight": "110.2 lbs",
-        "height": "9'10",
-        "image": "????"
-       
-        }
-   
+		"id": 3,
+		"name": "pikachu",
+		"type": "electric",
+		"type2": null,
+		"weight": 60,
+		"height": 4,
+		"image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+		"team_id": null
+	},
+	{
+		"id": 4,
+		"name": "bulbasaur",
+		"type": "grass",
+		"type2": "poison",
+		"weight": 69,
+		"height": 7,
+		"image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+		"team_id": null
+	},
+    {
+		"id": 5,
+		"name": "charmander",
+		"type": "fire",
+		"type2": null,
+		"weight": 85,
+		"height": 6,
+		"image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+		"team_id": null
+	},
+    {
+        "id": 6,
+        "name": "squirtle",
+        "type": "water",
+        "weight": 90,
+        "height": 5,
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+    }
 ]
