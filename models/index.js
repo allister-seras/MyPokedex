@@ -3,6 +3,11 @@ const Pokemon = require('./Pokemons');
 const Team = require('./Teams');
 
 User.hasMany(Team, {
+    foreignKey: "user_id",
+    onDelete: "CASCADE"
+});
+
+Team.hasOne(Team, {
     foreignKey: "user_id"
 });
 
