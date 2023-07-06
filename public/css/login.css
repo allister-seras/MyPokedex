@@ -52,7 +52,7 @@
     color: transparent;
     border-style: hidden;
     background-size: cover;
-    background-image: url(../../assets/loginpoke.png);
+    background-image: url(../assets/loginpoke.png);
     flex-direction: row;
 }
   .login-backbtn {
@@ -65,7 +65,7 @@
     border-style: hidden;
     background-size: cover;
     background-color: transparent;
-    background-image: url(../../assets/back_btn.png);
+    background-image: url(../assets/back_btn.png);
   }
   .login-image {
     top: 57px;

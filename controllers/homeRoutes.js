@@ -6,7 +6,10 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Pass serialized data and session flag into template
-    res.render('index.html');
+    res.render('index.html', {
+      style: 'home.css'
+    });
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -71,7 +74,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {
+    style: 'login.css'
+  });
 });
 
 router.get('/signup', (req, res) => {
@@ -81,7 +86,9 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  res.render('signup');
+  res.render('signup', {
+    style: 'signup.css'
+  });
 });
 
 
