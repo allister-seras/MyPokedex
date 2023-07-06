@@ -1,13 +1,13 @@
 const sequelize = require('../config/connection');
-const { User, Pokemons, Teams } = require('../models');
+const { User, Pokemon, Team } = require('../models');
 
 const userData = require('./userData.json');
-const pokemonData = require('./pokemonData.json');
+const pokemonSeedData = require('./pokemonData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const pokemons = await Pokemons.bulkCreate(pokemonSeedData);
+  const pokemons = await Pokemon.bulkCreate(pokemonSeedData);
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
@@ -32,7 +32,7 @@ for (let i = 0; i < 10; i++) {
       Math.floor(Math.random() * pokemons.length)
     ];
 
-    await Teams.create({
+    await Team.create({
         user_id: users[Math.floor(Math.random() * users.length)].id,
         pokemon1: randomPokemonId,
         pokemon2: randomPokemonId,

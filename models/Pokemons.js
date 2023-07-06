@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //create pokemon model
-class Pokemons extends Model {}
+class Pokemon extends Model {}
 
 
 //create columns for pokemon model
-Pokemons.init(
+Pokemon.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -30,7 +30,7 @@ Pokemons.init(
             allowNull: false
           },
           height: {
-            type: DataTypes.FLOAT,
+            type: DataTypes.STRING,
             allowNull: false
           },
           /*description: {
@@ -58,4 +58,4 @@ Pokemons.init(
     }
 )
 
-module.exports = Pokemons;
+module.exports = Pokemon;
