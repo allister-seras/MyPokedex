@@ -82,7 +82,7 @@
     padding: 0px;
     padding-bottom: 1px;
     background-size: cover;
-    background-image: url(../../assets/sign\ up.png);
+    background-image: url(../assets/signUp.png);
 }
   .signup-backbtn {
     left: 7px;
@@ -99,7 +99,7 @@
     padding-right: 54px;
     background-size: cover;
     background-color: transparent;
-    background-image: url(../../assets/back_btn.png);
+    background-image: url(../assets/back_btn.png);
 }
   .signup-image {
     top: 57px;
