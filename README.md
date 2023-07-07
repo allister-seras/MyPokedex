@@ -8,10 +8,10 @@ As a pokemon trainer, I want to be able to build my own team and have access to 
 
 
 ## Group:
- Allister Kalag
- Leonela Ludena
- Amanda Monroy
- Raymond Nguyen
+ Allister Kalag,
+ Leonela Ludena,
+ Amanda Monroy,
+ Raymond Nguyen,
  Nathan Sabin
 
 ## API's:
