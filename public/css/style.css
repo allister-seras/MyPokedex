@@ -2,6 +2,13 @@ header, footer, body {
   background-color: #524FE2;
 }
 
+.team-credits {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration-color: yellow;
+  text-align: center;
+  text-justify: center;
+}
+
 .no-button {
   background: none;
   border: none;

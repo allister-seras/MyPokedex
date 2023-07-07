@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Pokédex</title>
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/foundation.min.css">
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="/public/css/{{style.css}}">
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/{{style}}">
 </head>
 
 <body>
@@ -18,12 +18,12 @@
         <a href="/profile"> 
           <img src="https://cdn3.emoji.gg/emojis/pokeball.png" width="64px" height="64px" alt="pokeball">
         </a> 
-        <a href="/profile">My Pokédex</a>
+        <a href="/pokemon">My Pokédex</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/pokemon">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{/if}}
       </nav>
@@ -46,7 +46,7 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="team-credits">
         <h3>Brought To You By Team Rocket 5</h3>
         <p>Allister Kalag, Leonela Ludena, Amanda Monroy, Raymond Nguyen, Nathan Sabin</p>
     </footer>
