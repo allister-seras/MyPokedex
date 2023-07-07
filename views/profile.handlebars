@@ -1,28 +1,19 @@
 <div class="row">
+    <a href="/profile">
+    <img src="/public/assets/mypokedex.png">
+    </a>
   <div class="col-auto">
     <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="row mt-4" id="pro-body">
   <div class="col-md-6">
     <h3>Create a New Team!:</h3>
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">Team name:</label>
-        <input class="form-input" type="text" id="team-name" name="team-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">Description:</label>
-        <textarea class="form-input" id="team-desc" name="team-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="button large" id="create-button">Create</button>
       </div>
     </form>
   </div>
