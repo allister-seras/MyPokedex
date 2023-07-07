@@ -111,9 +111,3 @@
     position: absolute;
     object-fit: cover;
   }
-  @media(max-width: 1200px) {
-    .signup-signup1 {
-      top: 427px;
-      right: 93px;
-    }
-  }

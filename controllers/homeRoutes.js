@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Team, User, Pokemon } = require('../models');
 const withAuth = require('../utils/auth');
 
+// renders homescreen
 router.get('/', async (req, res) => {
   try {
     // Pass serialized data and session flag into template
@@ -14,8 +15,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/pokedex', async (req, res) => {
+// grabs pokemon data
+// TODO render data  
+router.get('/pokedex:id', async (req, res) => {
   try {
+
     const PokedexData = await Pokemon.findAll();
 
     const pokemon = PokedexData.get({ plain: true });
@@ -28,7 +32,9 @@ router.get('/pokedex', async (req, res) => {
   }
 });
 
+
 router.get('/pokemon/:id', async (req, res) => {
+// TODO adjust handlebars to format data
   try {
     const PokemonData = await Pokemon.findByPk(req.params.id);
 
@@ -62,6 +68,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// renders user profile unless they are logged in than it renders login screen
 router.get('/login', (req, res) => {
   
   if (req.session.logged_in) {
