@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 // TODO render data  
 router.get('/pokedex:id', async (req, res) => {
   try {
-    const PokedexData = await Pokemon.findByPk(req.params.id);
+    const PokedexData = await Pokemon.findAll();
 
     const pokemon = PokedexData.get({ plain: true });
 
@@ -31,8 +31,7 @@ router.get('/pokedex:id', async (req, res) => {
   }
 });
 
-// TODO adjust handlebars to format data
-router.get('/pokemon:id', async (req, res) => {
+router.get('/pokemon/:id', async (req, res) => {
   try {
     const PokemonData = await Pokemon.findByPk(req.params.id);
 
