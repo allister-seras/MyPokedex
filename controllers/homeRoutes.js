@@ -16,14 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/pokedex', async (req, res) => {
   try {
-    const PokedexData = await Pokemon.findByPk(req.params.id, {
-      include: [
-        {
-          model: Pokemon,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const PokedexData = await Pokemon.findAll();
 
     const pokemon = PokedexData.get({ plain: true });
 
@@ -35,16 +28,9 @@ router.get('/pokedex', async (req, res) => {
   }
 });
 
-router.get('/pokemon:id', async (req, res) => {
+router.get('/pokemon/:id', async (req, res) => {
   try {
-    const PokemonData = await Pokemon.findByPk(req.params.id, {
-      include: [
-        {
-          model: Pokemon,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const PokemonData = await Pokemon.findByPk(req.params.id);
 
     const pokemon = PokemonData.get({ plain: true });
 
