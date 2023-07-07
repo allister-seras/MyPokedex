@@ -1,12 +1,16 @@
 header, footer, body {
-  background-color: #524FE2;
+  background-color: #272668;
 }
 
 .team-credits {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  text-decoration-color: yellow;
+  color: rgb(253, 250, 66);
   text-align: center;
   text-justify: center;
+}
+
+#pro-body {
+  background-color: rgb(19, 10, 27);
 }
 
 .no-button {
