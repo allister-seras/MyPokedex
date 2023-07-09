@@ -33,9 +33,9 @@ router.get("/:team", async (req, res) => {
 router.post("/user", async (req,res) => {
   User.create(
     {
-      name: "test",
-      email: "email@test.com",
-      password: "password"
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
   }
   );
   res.status(200).json("worked")
@@ -46,8 +46,7 @@ router.post("/user", async (req,res) => {
 router.post('/', async (req, res) => {
     try {
         Team.create(
-          // add this line when deployed
-          // {user_id: req.session.user_id}
+          {user_id: req.session.user_id}
           ).then(() => {
           res.status(200).json("New team created");
         })
@@ -267,9 +266,9 @@ router.delete("/remove/:teamNum", async (req, res) => {
 router.delete("/delete/:teamNum", async (req, res) =>{
   try {
     Team.destroy({
-      where: {id: res.params.teamNum}
-    }).then(() => {
-      res.status(200).json(500);
+      where: {id: req.params.teamNum}
+    }).then((response) => {
+      res.status(200).json(response);
     })
   } catch (err) {
     res.status(500).json(err);
