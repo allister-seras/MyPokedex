@@ -7,19 +7,18 @@ User.hasMany(Team, {
     onDelete: "CASCADE"
 });
 
-Team.hasOne(Team, {
+Team.hasOne(User, {
     foreignKey: "user_id"
-});
-
-Team.belongsTo(Pokemon, {
-    foreignKey: "pokemon_id"
 });
 
 Pokemon.hasOne(Team, {
     foreignKey: "pokemon_id"
 });
 
-
+Team.hasMany(Pokemon, {
+    foreignKey: "team_id",
+    onDelete: "CASCADE"
+});
 
 
 

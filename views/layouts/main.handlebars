@@ -25,7 +25,7 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/pokemon">profile</a> |
+        <a href="/pokemon">pokemon</a> |
         <button class="no-button" id="logout">logout</button>
         {{/if}}
       </nav>
@@ -57,8 +57,7 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="/js/profile.js"></script> 
   {{/if}}
-
-  <script src="./js/logout.js"></script>
 </body>
 </html>
