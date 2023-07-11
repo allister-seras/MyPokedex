@@ -36,13 +36,11 @@ router.get('/pokedex:id', async (req, res) => {
 router.get('/pokemon/:id', async (req, res) => {
 // TODO adjust handlebars to format data
   try {
-    const PokemonData = await Pokemon.findByPk(req.params.id);
+    // const PokemonData = await Pokemon.findByPk(req.params.id);
 
-    const pokemon = PokemonData.get({ plain: true });
+    //const pokemon = PokemonData.get({ plain: true });
 
-    res.render('pokemon', {
-      ...pokemon,
-    });
+    res.render('pokemon');
   } catch (err) {
     res.status(500).json(err);
   }

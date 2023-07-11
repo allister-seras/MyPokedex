@@ -24,14 +24,33 @@ const removeTeam = async (id) => {
     }
 }
 
+// renders new team
+const renderTeam = async (id) => {
+    console.log("worked")
+    var response = await fetch(`/pokemon/${id}`, {
+        method: "GET", 
+    });
+    
+    if (!response.ok) {
+        alert("error updating team")
+    } else {
+        document.location.replace(`/pokemon/${id}`);
+    }
+}
+
 // adds event clicker for team button 
 document
 .querySelector("#create-button")
 .addEventListener("click", addTeam);
 
-// adds event clicker for all remove buttons 
+// adds event clicker for all remove/ add buttons 
 removeButton = document.querySelectorAll(".remove");
+addButton = document.querySelectorAll(".add");
 
 for (let i = 0; i < removeButton.length; i++) {
-    removeButton[i].addEventListener("click", () => {removeTeam(removeButton[i].id)});
+    removeButton[i].addEventListener("click", () => removeTeam(removeButton[i].id));
+}
+
+for (let i = 0; i < addButton.length; i++) {
+    addButton[i].addEventListener("click", () => renderTeam(addButton[i].id));
 }
