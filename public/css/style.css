@@ -11,7 +11,15 @@ header, footer, body {
 
 #pro-body {
   background-color: rgb(19, 10, 27);
+  margin: 0;
+  padding: 0;
+  color: white;
 }
+
+#welcome-message {
+  color: white;
+}
+
 
 .no-button {
   background: none;
