@@ -40,7 +40,9 @@ router.get('/pokemon/:id', async (req, res) => {
 
     //const pokemon = PokemonData.get({ plain: true });
 
-    res.render('pokemon');
+    res.render('pokemon', {
+      id: req.params.id
+    });    
   } catch (err) {
     res.status(500).json(err);
   }
