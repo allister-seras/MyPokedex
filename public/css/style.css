@@ -1,16 +1,23 @@
-header, footer, body {
+header, footer {
+  color: #ffffff;
   background-color: #272668;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color:#140a1c;
 }
 
 .team-credits {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: rgb(253, 250, 66);
+  color: #fdfa42;
   text-align: center;
   text-justify: center;
 }
 
-#pro-body {
-  background-color: rgb(19, 10, 27);
+.pro-body {
+  background-color: #140a1c;
   margin: 0;
   padding: 0;
   color: white;
@@ -18,6 +25,11 @@ header, footer, body {
 
 #welcome-message {
   color: white;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 10pt;
 }
 
 
@@ -34,4 +46,21 @@ header, footer, body {
 .no-button:hover {
   color: #065b83;
   text-decoration: underline;
+}
+
+h2 {
+  color: white
+}
+
+.pkmName {
+  color: white
+}
+
+thead {
+  background-color: #272668;
+  color:#fdfa42
+}
+
+tbody {
+  background-color: #88A0A8;
 }

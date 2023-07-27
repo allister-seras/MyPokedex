@@ -1,9 +1,18 @@
-<section class="container">
-  <h3 class="team">{{team.name}}</h3>
+{{#if pokemon.length}}
+<section class="container"> 
   <section class="flex-row justify-center">
-    <!-- For each pokemon that belongs to this team, the pokecard partial is used to render each pokemon's data -->
-    {{#each team.pokemon as |pokemon|}}
-    {{> pokecard}}
-    {{/each}}
+    <div class="card">
+      <div class="card-section">
+      <img {{pokemon.image}}>
+    </div>
+    <div class="card-section">
+      <p>{{pokemon.name}}</p>
+      <p>{{pokemon.type}}</p> 
+      {{#if pokemon.type2}}
+      <p>{{pokemon.type2}}</p>
+      {{/if}}
+    </div>
+  </div>
   </section>
 </section>
+{{/if}}
