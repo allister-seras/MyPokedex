@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-auto">
+  <div class="col-auto welcomeMsg">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
@@ -7,29 +7,15 @@
 
    <form class="pokemon1-name">
       <div class="form-group">
-        <label for="pokemon1-name">
-          Pokemon #1 Name
-          </label>
+        <label for="pokemon1-name" class="pkmName">
+          Pokemon Name
+        </label>
         <input class="form-input" type="text" id="pokemon1-name" name="pokemon1-name"/>
       </div>
       <div class="form-group">
         <button type="submit" id="{{id}}" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
-
-  {{#if team.length}}
-  <div class="team">
-
-    {{#each pokemonData as |pokemon|}}
-    {{!-- <div class="row mb-2"> --}}
-      <div class="col-md-8">
-        <h4><a href="/pokemon/{{pokemon.name}}">{{pokemon.type}}</a></h4>
-  
-    </div>
-    {{/each}}
-  {{!-- </div> --}}
-  {{/if}}
 </div>
 
 <script src="/js/pokemon.js"></script>

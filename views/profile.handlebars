@@ -1,40 +1,40 @@
-<div class="row">
-    <a href="/profile">
-    <img src="/public/assets/mypokedex.png">
-    </a>
-  <div class="col-auto">
-    <h2>Welcome, {{user_data.name}}!</h2>
-  </div>
-</div>
-<div class="row mt-4" id="pro-body">
-  <div class="col-md-6">
+<main class="pro-body">
+  <h2>Welcome, {{user_data.name}}!</h2>
+  <article align="center" >
+    <a href="/profile"><img src="/assets/teams.png"></a>
+  </article>
+</main>
+<div class="pro-body">
+  <span>
     <h3>Create a New Team!</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <button type="submit" class="button large" id="create-button">Create</button>
-      </div>
-    </form>
-  </div>
+    <button type="submit" class="button large" id="create-button">Create</button>
+  </span>
   {{#if user_data.teams.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Teams:</h3>
-
+  <table>
+    <thead>
+      <tr>
+        <th width="200">Current Teams:</th>
+        <th></th>
+        <th width="150"></th>
+      </tr>
+    </thead>
     {{#each user_data.teams as |team|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{team.id}}">{{team.name}}</a></h4>
-      </div>
-      <div>
-        {{> team}}
-      </div>
-      <div class="col-md-4">
-        <button class="add btn btn-sm button success" id="{{team.id}}">ADD</button>
-        <button class="remove btn btn-sm btn-danger" id="{{team.id}}">DELETE</button>
-      </div>
-    </div>
+    <tbody>
+      <tr>
+        <td>
+          <h4><a href="/project/{{team.id}}">{{team.id}}</a></h4>
+        </td>
+        <td>
+          {{> team}}
+        </td>
+        <td>
+          <button class="add btn btn-sm button success" id="{{team.id}}">ADD</button>
+          <button class="remove btn btn-sm btn-danger" id="{{team.id}}">DELETE</button>
+        </td>
+      </tr>  
+    </tbody>
     {{/each}}
-  </div>
+  </table>
   {{/if}}
 </div>
 
